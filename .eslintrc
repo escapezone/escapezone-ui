@@ -1,0 +1,63 @@
+{
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2020,
+		"sourceType": "module"
+	},
+
+	"parser": "@babel/eslint-parser",
+
+	"extends": ["plugin:react/recommended", "airbnb-base", "eslint-config-prettier"],
+	"plugins": ["react", "prettier", "react-hooks"],
+
+	"rules": {
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"react/jsx-uses-vars": 1,
+		"react/jsx-uses-react": 1,
+		"prettier/prettier": 0,
+		"import/imports-first": 0,
+		"import/no-named-as-default": 0,
+		"import/no-named-as-default-member": 0,
+		"import/no-mutable-exports": 1,
+		"import/no-extraneous-dependencies": 0,
+		"import/order": 0,
+		"no-use-before-define": 0,
+		"import/extensions": 0,
+		"import/no-unresolved": 0,
+		"no-console": 0,
+		"func-names": 0,
+		"no-unused-vars": 1,
+		"class-methods-use-this": 1,
+		"camelcase": 0,
+		"no-useless-constructor": 1,
+		"no-nested-ternary": 0,
+		"no-undef": 0,
+		"react/prop-types": 0,
+		"no-restricted-imports": 0,
+		"arrow-body-style": 0,
+		"import/prefer-default-export": 0,
+		"prefer-object-spread": 0,
+		"eslint-disable-next-line": 0,
+		"no-underscore-dangle": 0,
+		"array-callback-return": 0,
+		"no-plusplus": 0,
+		"spaced-comment": 0,
+		"consistent-return": 0,
+		"no-irregular-whitespace": 0,
+		"no-shadow": 0,
+		"react/no-children-prop": 0,
+		"import/no-dynamic-require": 0,
+		"global-require": 0,
+		"prettier": "^2.8.2",
+		"eslint": "^7.23.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-react-app": "^6.0.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.23.2",
+		"eslint-plugin-react-hooks": "^4.2.0"
+	}
+}
