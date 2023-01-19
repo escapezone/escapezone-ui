@@ -7,9 +7,10 @@
 		"sourceType": "module"
 	},
 
-	"parser": "@babel/eslint-parser",
+	"parser": "@typescript-eslint/parser",
+	// "parser": "@babel/eslint-parser",
 
-	"extends": ["plugin:react/recommended", "airbnb-base", "eslint-config-prettier"],
+	"extends": ["plugin:react/recommended", "airbnb-base", "eslint-config-prettier", "plugin:prettier/recommended"],
 	"plugins": ["react", "prettier", "react-hooks"],
 
 	"rules": {
@@ -50,10 +51,10 @@
 		"react/no-children-prop": 0,
 		"import/no-dynamic-require": 0,
 		"global-require": 0,
-		"prettier": "^2.8.2",
+		"prettier": "^2.8.3",
 		"eslint": "^7.23.0",
 		"eslint-config-airbnb-base": "^14.2.1",
-		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-prettier": "^8.6.0",
 		"eslint-config-react-app": "^6.0.0",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-prettier": "^4.2.1",
