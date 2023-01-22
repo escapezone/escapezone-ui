@@ -1,4 +1,4 @@
-import { IconDashboard } from '@tabler/icons';
+import { IconDashboard, IconHome2 } from '@tabler/icons';
 
 const dashboard = {
 	id: 'dashboard',
@@ -11,6 +11,14 @@ const dashboard = {
 			type: 'item',
 			url: '/dashboard',
 			icon: IconDashboard,
+			breadcrumbs: false
+		},
+		{
+			id: 'main',
+			title: 'Main',
+			type: 'item',
+			url: '/main',
+			icon: IconHome2,
 			breadcrumbs: false
 		}
 	]

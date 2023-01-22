@@ -1,79 +1,40 @@
-import PropTypes from 'prop-types';
-
-import { observer } from 'mobx-react-lite';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Avatar, Box, ButtonBase } from '@mui/material';
+import { Box, ButtonBase } from '@mui/material';
 
 // project imports
-import LogoSection from '../LogoSection';
-import SearchSection from './SearchSection';
+import Search from './Search';
 import ProfileSection from './ProfileSection';
 import NotificationSection from './NotificationSection';
 
-// assets
-import { IconMenu2 } from '@tabler/icons';
+import logo from 'assets/images/logo.png';
 
-import useStore from 'store/index';
+// project imports
+import config from 'config';
 
 const Header = () => {
-	const { customizeStore } = useStore();
-	const { opened } = customizeStore;
-
 	const theme = useTheme();
-
-	const handleLeftDrawerToggle = () => {
-		customizeStore.onChangeOpened(!opened);
-	};
 
 	return (
 		<>
-			{/* logo & toggler button */}
-			<Box
-				sx={{
-					width: 228,
-					display: 'flex',
-					[theme.breakpoints.down('md')]: {
-						width: 'auto'
-					}
-				}}
-			>
+			<Box sx={{ width: 228, display: 'flex', [theme.breakpoints.down('md')]: { width: 'auto' } }}>
 				<Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
-					<LogoSection />
+					<ButtonBase disableRipple component={Link} to={config.defaultPath}>
+						<Box component="span" sx={{ display: { xs: 'none', md: 'block', width: 190 }, flexGrow: 1 }}>
+							<img src={logo} width={'80%'} />
+						</Box>
+					</ButtonBase>
 				</Box>
-				<ButtonBase sx={{ borderRadius: '12px', overflow: 'hidden' }}>
-					<Avatar
-						variant="rounded"
-						sx={{
-							...theme.typography.commonAvatar,
-							...theme.typography.mediumAvatar,
-							transition: 'all .2s ease-in-out',
-							background: theme.palette.secondary.light,
-							color: theme.palette.secondary.dark,
-							'&:hover': {
-								background: theme.palette.secondary.dark,
-								color: theme.palette.secondary.light
-							}
-						}}
-						onClick={handleLeftDrawerToggle}
-						color="inherit"
-					>
-						<IconMenu2 stroke={1.5} size="1.3rem" />
-					</Avatar>
-				</ButtonBase>
 			</Box>
+			<Search />
 
-			{/* header search */}
-			<SearchSection />
-			<Box sx={{ flexGrow: 1 }} />
-			<Box sx={{ flexGrow: 1 }} />
-
-			{/* notification & profile */}
-			<NotificationSection />
-			<ProfileSection />
+			{/* <NotificationSection /> */}
+			{/* <ProfileSection /> */}
 		</>
 	);
 };
 
-export default observer(Header);
+export default Header;
