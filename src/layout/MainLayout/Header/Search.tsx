@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { shouldForwardProp } from '@mui/system';
-import { useTheme, styled } from '@mui/material/styles';
+import { Theme as MuiTheme, useTheme, styled } from '@mui/material/styles';
 import { Avatar, Box, ButtonBase, Card, Grid, InputAdornment, OutlinedInput, Popper } from '@mui/material';
 import PopupState, { bindPopper, bindToggle } from 'material-ui-popup-state';
 import { IconAdjustmentsHorizontal, IconSearch, IconX } from '@tabler/icons';
@@ -9,6 +9,10 @@ import { IconAdjustmentsHorizontal, IconSearch, IconX } from '@tabler/icons';
 import Transitions from 'ui-component/extended/Transitions';
 
 import logo from 'assets/images/logo.png';
+
+declare module '@emotion/react' {
+	export interface Theme extends MuiTheme {}
+}
 
 const PopperStyle = styled(Popper, { shouldForwardProp })(({ theme }) => ({
 	zIndex: 1100,
@@ -48,7 +52,7 @@ const Search = () => {
 					{(popupState) => (
 						<>
 							<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-								<img src={logo} width={'40%'} />
+								<img src={logo} width="40%" />
 								<Box sx={{ ml: 2, mt: 1 }}>
 									<ButtonBase sx={{ borderRadius: '12px' }}>
 										<HeaderAvatarStyle variant="rounded" {...bindToggle(popupState)}>
@@ -60,7 +64,7 @@ const Search = () => {
 							<PopperStyle {...bindPopper(popupState)} transition>
 								{({ TransitionProps }) => (
 									<>
-										<Transitions type="zoom" {...TransitionProps} sx={{ transformOrigin: 'center left' }}>
+										<Transitions {...TransitionProps}>
 											<Card sx={{ background: '#fff', [theme.breakpoints.down('sm')]: { border: 0, boxShadow: 'none' } }}>
 												<Box sx={{ p: 2 }}>
 													<Grid container alignItems="center" justifyContent="space-between">
