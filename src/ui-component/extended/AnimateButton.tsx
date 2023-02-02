@@ -5,7 +5,7 @@ import { motion, useCycle } from 'framer-motion';
 type TAnimateButton = {
 	children: ReactNode;
 	offset?: Number;
-	type?: 'slide' | 'scale' | 'rotate';
+	type: 'slide' | 'scale' | 'rotate' | undefined;
 	direction?: 'up' | 'down' | 'left' | 'right';
 	scale?: {
 		hover: Number;
@@ -14,21 +14,8 @@ type TAnimateButton = {
 };
 
 const AnimateButton = forwardRef(({ children, type, direction, offset, scale }: TAnimateButton, ref: Ref<any>) => {
-	let offset1;
-	let offset2;
-	switch (direction) {
-		case 'up':
-		case 'left':
-			offset1 = offset;
-			offset2 = 0;
-			break;
-		case 'right':
-		case 'down':
-		default:
-			offset1 = 0;
-			offset2 = offset;
-			break;
-	}
+	const offset1 = direction === 'left' || direction === 'up' ? offset : 0;
+	const offset2 = direction === 'left' || direction === 'up' ? 0 : offset;
 
 	const [x, cycleX] = useCycle(offset1, offset2);
 	const [y, cycleY] = useCycle(offset1, offset2);
@@ -52,13 +39,13 @@ const AnimateButton = forwardRef(({ children, type, direction, offset, scale }: 
 		case 'slide':
 			if (direction === 'up' || direction === 'down') {
 				return (
-					<motion.div ref={ref} animate={{ y: y !== undefined ? y : '' }} onHoverEnd={() => cycleY()} onHoverStart={() => cycleY()}>
+					<motion.div ref={ref} animate={{ y: y ? y : '' }} onHoverEnd={() => cycleY()} onHoverStart={() => cycleY()}>
 						{children}
 					</motion.div>
 				);
 			}
 			return (
-				<motion.div ref={ref} animate={{ x: x !== undefined ? x : '' }} onHoverEnd={() => cycleX()} onHoverStart={() => cycleX()}>
+				<motion.div ref={ref} animate={{ x: x ? x : '' }} onHoverEnd={() => cycleX()} onHoverStart={() => cycleX()}>
 					{children}
 				</motion.div>
 			);
@@ -78,5 +65,7 @@ const AnimateButton = forwardRef(({ children, type, direction, offset, scale }: 
 			);
 	}
 });
+
+AnimateButton.displayName = 'AnimateButton';
 
 export default AnimateButton;

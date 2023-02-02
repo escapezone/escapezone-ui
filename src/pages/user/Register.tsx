@@ -37,8 +37,8 @@ const Register = ({ ...others }) => {
 		setShowPassword(!showPassword);
 	};
 
-	const handleMouseDownPassword = (event: Event) => {
-		event.preventDefault();
+	const handleMouseDownPassword = () => {
+		console.log('handleMouseDownPassword');
 	};
 
 	const changePassword = (value: string) => {

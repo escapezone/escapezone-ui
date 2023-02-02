@@ -13,12 +13,13 @@ import SamplePage from 'views/sample-page';
 import Typography from 'views/utilities/Typography';
 import Color from 'views/utilities/Color';
 import Shadow from 'views/utilities/Shadow';
+import Chat from 'pages/chat';
 
 const getPage = (tab: number) => {
 	if (tab === 0) return <Dashboard />;
 	if (tab === 1) return <Typography />;
 	if (tab === 2) return <Color />;
-	if (tab === 3) return <Shadow />;
+	if (tab === 3) return <Chat />;
 	if (tab === 4) return <SamplePage />;
 
 	return null;

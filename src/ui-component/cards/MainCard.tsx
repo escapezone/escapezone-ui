@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { Ref, forwardRef, ReactNode } from 'react';
 
 // material-ui
@@ -21,9 +20,9 @@ type TMainCard = {
 	secondary?: any;
 	shadow?: string;
 	sx: {
-		maxWidth: { xs: number; lg: number };
-		margin: { xs: number; md: number };
-		'& > *': { flexGrow: number; flexBasis: string };
+		maxWidth?: { xs: number; lg: number };
+		margin?: { xs: number; md: number };
+		'& > *'?: { flexGrow: number; flexBasis: string };
 	};
 	title?: any;
 };
@@ -79,5 +78,7 @@ const MainCard = forwardRef(
 		);
 	}
 );
+
+MainCard.displayName = 'MainCard';
 
 export default MainCard;

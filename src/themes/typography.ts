@@ -1,7 +1,9 @@
 declare module '@mui/material/styles/createTypography' {
 	interface FontStyle {
 		commonAvatar: { cursor: string; borderRadius: string };
+		smallAvatar: { width: string; height: string; fontSize: string };
 		mediumAvatar: { width: string; height: string; fontSize: string };
+		largeAvatar: { width: string; height: string; fontSize: string };
 		customInput: { marginTop: number; marginBottom: number };
 	}
 }
@@ -10,19 +12,19 @@ export default function themeTypography(theme: any) {
 	return {
 		fontFamily: theme?.customization?.fontFamily,
 		h6: {
+			fontSize: '0.75rem',
 			fontWeight: 500,
-			color: theme.heading,
-			fontSize: '0.75rem'
+			color: theme.heading
 		},
 		h5: {
 			fontSize: '0.875rem',
-			color: theme.heading,
-			fontWeight: 500
+			fontWeight: 500,
+			color: theme.heading
 		},
 		h4: {
 			fontSize: '1rem',
-			color: theme.heading,
-			fontWeight: 600
+			fontWeight: 600,
+			color: theme.heading
 		},
 		h3: {
 			fontSize: '1.25rem',
@@ -31,13 +33,13 @@ export default function themeTypography(theme: any) {
 		},
 		h2: {
 			fontSize: '1.5rem',
-			color: theme.heading,
-			fontWeight: 700
+			fontWeight: 700,
+			color: theme.heading
 		},
 		h1: {
 			fontSize: '2.125rem',
-			color: theme.heading,
-			fontWeight: 700
+			fontWeight: 700,
+			color: theme.heading
 		},
 		subtitle1: {
 			fontSize: '0.875rem',
