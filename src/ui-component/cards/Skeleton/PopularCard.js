@@ -1,4 +1,4 @@
-// material-ui
+import React from 'react';
 import { Card, CardContent, Grid } from '@mui/material';
 import Skeleton from '@mui/material/Skeleton';
 

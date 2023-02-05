@@ -47,8 +47,7 @@ const MainRoutes = {
 	path: '/',
 	element: <MainLayout />,
 	children: [
-		{ path: '/', element: <DashboardDefault /> },
-		{ path: '/main', element: <Main /> },
+		{ path: '/', element: <Main /> },
 		{ path: 'dashboard', children: [{ path: '', element: <DashboardDefault /> }] },
 		{ path: 'utils', children: [{ path: 'util-typography', element: <UtilsTypography /> }] },
 		{ path: 'utils', children: [{ path: 'util-color', element: <UtilsColor /> }] },

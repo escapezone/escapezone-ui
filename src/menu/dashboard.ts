@@ -1,4 +1,4 @@
-import { IconDashboard, IconHome2 } from '@tabler/icons';
+import { IconDashboard, IconHome2 } from '@tabler/icons-react';
 
 const dashboard = {
 	id: 'dashboard',

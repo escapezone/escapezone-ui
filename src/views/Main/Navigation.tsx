@@ -6,7 +6,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
 
-import { IconMessageCircle, IconHome, IconSearch, IconDoor, IconUserCircle } from '@tabler/icons';
+import { IconMessageCircle, IconHome, IconSearch, IconDoor, IconUserCircle } from '@tabler/icons-react';
 
 import Dashboard from 'views/dashboard/Default';
 import SamplePage from 'views/sample-page';

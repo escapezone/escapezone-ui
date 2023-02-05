@@ -10,7 +10,7 @@
 
 	"parser": "@babel/eslint-parser",
 	"extends": ["plugin:react/recommended", "airbnb-base", "eslint-config-prettier"],
-	"plugins": ["react", "prettier", "react-hooks"],
+	"plugins": ["react", "prettier", "react-hooks", "tsx"],
 
 	"rules": {
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],

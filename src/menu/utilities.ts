@@ -1,5 +1,5 @@
 // assets
-import { IconTypography, IconPalette, IconShadow, IconWindmill, IconBrandChrome } from '@tabler/icons';
+import { IconTypography, IconPalette, IconShadow, IconWindmill, IconBrandChrome } from '@tabler/icons-react';
 
 const utilities = {
 	id: 'utilities',
