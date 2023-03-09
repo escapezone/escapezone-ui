@@ -1,14 +1,4 @@
-declare module '@mui/material/styles/createTypography' {
-	interface FontStyle {
-		commonAvatar: { cursor: string; borderRadius: string };
-		smallAvatar: { width: string; height: string; fontSize: string };
-		mediumAvatar: { width: string; height: string; fontSize: string };
-		largeAvatar: { width: string; height: string; fontSize: string };
-		customInput: { marginTop: number; marginBottom: number };
-	}
-}
-
-export default function themeTypography(theme: any) {
+export default function themeTypography(theme) {
 	return {
 		fontFamily: theme?.customization?.fontFamily,
 		h6: {

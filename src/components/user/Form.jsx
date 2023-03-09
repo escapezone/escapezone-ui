@@ -1,4 +1,6 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+
+import Image from 'next/image';
 
 import { useTheme, styled } from '@mui/material/styles';
 import { Box, Button, Divider, Grid } from '@mui/material';
@@ -7,7 +9,6 @@ import MainCard from 'ui-component/cards/MainCard';
 
 import kakao_login from 'assets/images/users/kakao_login.png';
 import naver_login from 'assets/images/users/naver_login.png';
-
 import logo from 'assets/images/logo.png';
 
 import { kakaoLogin, kakaoRegister, naverLogin, naverRegister } from 'api/user';
@@ -61,8 +62,6 @@ const Form = (props) => {
 		}
 	};
 
-	console.log(logo);
-
 	return (
 		<AuthWrapper>
 			<Grid container direction="column" justifyContent="flex-end" sx={{ minHeight: '100vh' }}>
@@ -73,14 +72,24 @@ const Form = (props) => {
 								<Grid container spacing={2} alignItems="center" justifyContent="center">
 									<Grid item sx={{ mb: 3 }} alignItems="center" justifyContent="center">
 										<Box sx={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
-											<img src={logo} width={'35%'} onClick={_handleAliveCheck} />
+											<Image alt="" src={logo} style={{ width: '35%', height: 'auto' }} onClick={_handleAliveCheck} />
 										</Box>
 									</Grid>
 									<Grid item xs={12}>
 										<Box sx={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
-											<img src={kakao_login} width={'10%'} style={{ cursor: 'pointer' }} onClick={_handleKakaoLogin} />
+											<Image
+												alt=""
+												src={kakao_login}
+												style={{ width: '10%', height: 'auto', cursor: 'pointer' }}
+												onClick={_handleKakaoLogin}
+											/>
 											&nbsp;&nbsp;
-											<img src={naver_login} width={'10%'} style={{ cursor: 'pointer' }} onClick={_handleNaverLogin} />
+											<Image
+												alt=""
+												src={naver_login}
+												style={{ width: '10%', height: 'auto', cursor: 'pointer' }}
+												onClick={_handleNaverLogin}
+											/>
 										</Box>
 									</Grid>
 									<Grid item xs={12}>

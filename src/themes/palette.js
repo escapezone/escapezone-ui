@@ -1,31 +1,4 @@
-/**
- * Color intention that you want to used in your theme
- * @param {JsonObject} theme Theme customization object
- */
-
-declare module '@mui/material/styles' {
-	interface Theme {}
-
-	interface Palette {
-		orange: Palette['primary'];
-	}
-
-	interface PaletteOptions {
-		orange: PaletteOptions['primary'];
-	}
-
-	interface PaletteColor {
-		200: string;
-	}
-
-	interface SimplePaletteColorOptions {
-		200: string;
-	}
-
-	interface ThemeOptions {}
-}
-
-export default function themePalette(theme: any) {
+export default function themePalette(theme) {
 	return {
 		mode: theme?.customization?.navType,
 		common: {
